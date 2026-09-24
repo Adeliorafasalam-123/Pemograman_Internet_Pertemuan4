@@ -187,7 +187,7 @@ console.log("Tier Member : " + Tier_C);
 
 let Menu_Rekomedasi = [
     "Caramel Macchiato",
-    "Kopi Susu",
+    "Kopi Susu Gula Aren",
     "Croissant Butter Keju",
     "Matcha Cream Latte",
     "Cinnamon Roll Hangat",
