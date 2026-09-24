@@ -60,13 +60,12 @@ console.log("Pengganti kasir sementara: " + Nama_Kasir);
 // 1. Tampilkan pop-up salam pembuka selamat datang menggunakan alert().
 alert("Selamat datang di Website Kedai Kopi PSTI");
 // 2. Tampilkan dialog prompt() untuk meminta nama pengunjung, simpan hasilnya ke variabel "namaPelanggan".
-let Nama_Pelanggan = prompt("Masukan nama anda untuk bisa mengakses web kami: ");
+let Nama_Pelanggan = prompt("Masukan nama anda untuk bisa mengakses web kami: (CAPSLOCK)");
 // 3. Gunakan percabangan "if - else":
 //    - JIKA namaPelanggan ada isinya: tampilkan alert sapaan dan log ke console.
 //    - JIKA namaPelanggan kosong / klik Cancel: beri nilai default "Pelanggan Setia" dan tampilkan alert pemberitahuan.
 if(Nama_Pelanggan){
-    alert("Halooo " + Nama_Pelanggan + "! Selamat datang dan Terimakasih sudah bergabung di web kami 👋😊" + "\n");
-    alert("Dapatkan dan tukerkan point anda untuk mendapatkan diskon dari kami 🤗")
+    alert("Halooo " + Nama_Pelanggan + "! Selamat datang dan Terimakasih sudah bergabung di web kami 👋😊" + "\n" + "Dapatkan dan tukerkan point anda untuk mendapatkan diskon dari kami 🤗");
     console.log("Halooo " + Nama_Pelanggan + "! Selamat datang dan Terimakasih sudah bergabung di web kami 👋😊" + "\n");
     console.log("Dapatkan dan tukerkan point anda untuk mendapatkan diskon dari kami 🤗")
 }else{
@@ -100,15 +99,37 @@ console.log("Selamat point anda sekarang adalah " + Total_Point + ". Tukarkan po
 
 // TODO 4:
 // 1. Buat variabel "tierMember" dan "benefit" bertipe string kosong ("").
+let Tier_Member ="";
+let Benefit ="";
 // 2. Gunakan percabangan "if - else if - else" berdasarkan nilai "totalPoin":
-//    - totalPoin >= 100 : tierMember = "Platinum", benefit = "Diskon 20% + Gratis 1 Minuman Signature"
+//    - totalPoin >= 100 : tierMember = "PLATINUM", benefit = "Diskon 20% + Gratis 1 Minuman Signature"
 //    - totalPoin >= 70  : tierMember = "Gold", benefit = "Diskon 10% di setiap transaksi"
 //    - totalPoin >= 40  : tierMember = "Silver", benefit = "Diskon 5% untuk menu minuman"
 //    - selain itu       : tierMember = "Bronze", benefit = "Member Reguler (kumpulkan poin untuk naik tier)"
 // 3. Cetak hasil tierMember dan benefit ke Console.
 // 4. Tampilkan ringkasan hasil member (nama, total poin, tier, benefit) via dialog alert().
 
-
+if(Total_Point >= 100){
+    Tier_Member = "PLATINUM";
+    Benefit = "DISKON 20% + GRATIS 1 MINUMAN SIGNATURE";
+    alert("SELAMAT " + Nama_Pelanggan + " TOTAL POINT ANDA SEKARANG ADALAH " + Total_Point + ", DAN ANDA MERAIH TIER " + Tier_Member + ". ANDA BERKESEMPATAN MENDAPATKAN " + Benefit);
+    console.log("SELAMAT " + Nama_Pelanggan + " TOTAL POINT ANDA SEKARANG ADALAH " + Total_Point + ", DAN ANDA MERAIH TIER " + Tier_Member + ". ANDA BERKESEMPATAN MENDAPATKAN " + Benefit + "DAPATKAN POINT LAGI UNTUK MENDAPATKAN BENEFIT YANG LEBIH WAHHHH LAGIIII! 🤩🥳🎉");
+}else if(Total_Point >= 70){
+    Tier_Member = "GOLD";
+    Benefit ="DISKON 10% DI SETIAP TRANSAKSI";
+    alert("SELAMAT " + Nama_Pelanggan + " TOTAL POINT ANDA SEKARANG ADALAH " + Total_Point + ", DAN ANDA MERAIH TIER " + Tier_Member + ". ANDA BERKESEMPATAN MENDAPATKAN " + Benefit + "DAPATKAN POINT LAGI UNTUK MENDAPATKAN BENEFIT YANG LEBIH WAHHHH LAGIIII! 🤩🥳🎉");
+    console.log("SELAMAT " + Nama_Pelanggan + " TOTAL POINT ANDA SEKARANG ADALAH " + Total_Point + ", DAN ANDA MERAIH TIER " + Tier_Member + ". ANDA BERKESEMPATAN MENDAPATKAN " + Benefit + "DAPATKAN POINT LAGI UNTUK MENDAPATKAN BENEFIT YANG LEBIH WAHHHH LAGIIII! 🤩🥳🎉");
+}else if(Total_Point >= 40){
+    Tier_Member = "SILVER";
+    Benefit ="DISKON 5% UNTUK MENU MINUMAN";
+    alert("SELAMAT " + Nama_Pelanggan + " TOTAL POINT ANDA SEKARANG ADALAH " + Total_Point + ", DAN ANDA MERAIH TIER " + Tier_Member + ". ANDA BERKESEMPATAN MENDAPATKAN " + Benefit + "DAPATKAN POINT LAGI UNTUK MENDAPATKAN BENEFIT YANG LEBIH WAHHHH LAGIIII! 🤩🥳🎉");
+    console.log("SELAMAT " + Nama_Pelanggan + " TOTAL POINT ANDA SEKARANG ADALAH " + Total_Point + ", DAN ANDA MERAIH TIER " + Tier_Member + ". ANDA BERKESEMPATAN MENDAPATKAN " + Benefit + "DAPATKAN POINT LAGI UNTUK MENDAPATKAN BENEFIT YANG LEBIH WAHHHH LAGIIII! 🤩🥳🎉");
+}else{
+    Tier_Member = "Bronze";
+    Benefit ="Member Reguler";
+    alert("Point anda masih terbilang kurang cukup untuk mendapatkan diskon, anda hanya sebagai " + Tier_Member + "Kumpulkan point untuk naik tier dan dapatkan benefit nya");
+    console.log("Point anda masih terbilang kurang cukup untuk mendapatkan diskon, anda hanya sebagai " + Tier_Member + "Kumpulkan point untuk naik tier dan dapatkan benefit nya");
+}
 
 
 // ============================================================
@@ -118,23 +139,42 @@ console.log("Selamat point anda sekarang adalah " + Total_Point + ". Tukarkan po
 // TODO 5A:
 // Buat fungsi "hitungTotalPoin(p1, p2, p3)" yang menerima 3 parameter nilai poin,
 // menjumlahkannya, dan mengembalikan (return) nilai total penjumlahannya.
-
-
+function Hitung_Total_Point(p1, p2, p3){
+    let jumlah = p1 + p2 + p3;
+    return jumlah;
+}
 
 
 // TODO 5B:
 // Buat fungsi "tentukanTierMember(poin)" yang menerima 1 parameter nilai poin,
 // dan mengembalikan (return) string nama tier beserta keterangannya.
 
+function Tentukan_Tier_Member(Point) { 
+    if (Point >= 100) return "PLATINUM"; 
+    if (Point >= 70) return "GOLD"; 
+    if (Point >= 40) return "SILVER"; 
+    if (Point < 40) return " Bronze";
+}
 
 
 
 // TODO 5C:
 // Buktikan bahwa fungsi di atas bisa dipakai ulang (reusable):
 // 1. Hitung total poin dan tentukan tier untuk simulasi Pelanggan B (misal poin: 35, 25, 20).
-// 2. Hitung total poin dan tentukan tier untuk simulasi Pelanggan C (misal poin: 15, 10, 5).
-// 3. Cetak data Pelanggan B dan C ke tab Console.
+// 2.  Cetak data Pelanggan B ke tab Console.
+let Pelanggan_B = Hitung_Total_Point(35, 25, 20);
+let Tier_B =  Tentukan_Tier_Member(Pelanggan_B);
+console.log("====DATA PELANGGAN B====");
+console.log("Jumlah Point : " + Pelanggan_B);
+console.log("Tier Member : " + Tier_B);
 
+// 3. Hitung total poin dan tentukan tier untuk simulasi Pelanggan C (misal poin: 15, 10, 5).
+// 4.  Cetak data Pelanggan C ke tab Console.
+let Pelanggan_C = Hitung_Total_Point(15, 10, 5);
+let Tier_C =  Tentukan_Tier_Member(Pelanggan_C);
+console.log("====DATA PELANGGAN C====");
+console.log("Jumlah Point : " + Pelanggan_C);
+console.log("Tier Member : " + Tier_C);
 
 
 
@@ -146,13 +186,9 @@ console.log("Selamat point anda sekarang adalah " + Total_Point + ". Tukarkan po
 // Buat variabel Array bernama "menuRekomendasi" yang berisi minimal 5 nama menu kopi/makanan.
 
 
-
-
 // TODO 6B:
 // Gunakan perulangan "for loop" untuk mencetak setiap menu ke Console dengan format:
 // "1. Nama Menu", "2. Nama Menu", dst. Gunakan (i + 1) untuk nomor urutnya.
-
-
 
 
 // TODO 6C:
