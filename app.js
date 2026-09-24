@@ -26,7 +26,7 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 
 // TODO 1: Tulis satu baris console.log() untuk memastikan file app.js sudah terhubung!
 // Contoh output: "Skrip app.js berhasil terhubung!"
-
+console.log("Skrip app.js berhasil terhubung!")
 
 
 
@@ -37,29 +37,43 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // ---- BAGIAN 2A: VARIABEL IDENTITAS KEDAI KOPI ----
 // TODO 2A:
 // 1. Buat konstanta "NAMA_KEDAI" bertipe string (misal: "Kopi PSTI Kampus").
+const Nama_Kedai ="Kopi PSTI Kampus UPI Purwakarta";
 // 2. Buat variabel "namaKasir" (misal: "Kak Eko") dan "shiftKerja" menggunakan "let".
+let Nama_Kasir ="Kak Adelio";
+let Shift_Keja ="19.00 s/d 02.00 WIB";
 // 3. Cetak nilai NAMA_KEDAI, namaKasir, dan shiftKerja ke Console menggunakan console.log().
-
-
+console.log("Nama Kedai : " + Nama_Kedai + ":\n");
+console.log("Nama Kasir : " + Nama_Kasir + ":\n");
+console.log("Shift Kerja : " + Shift_Keja + ":\n");
 
 
 // ---- DEMO PERBEDAAN LET vs CONST ----
 // TODO 2B:
 // Ubah (re-assign) nilai variabel "namaKasir" dengan nama kasir lain,
 // lalu cetak ke Console untuk membuktikan bahwa variabel "let" nilainya dapat diubah.
-
-
+Nama_Kasir ="Kak Naufal";
+console.log("Pengganti kasir sementara: " + Nama_Kasir);
 
 
 // ---- BAGIAN 2B: INPUT INTERAKTIF & PENGANDAIAN DASAR ----
 // TODO 2C:
 // 1. Tampilkan pop-up salam pembuka selamat datang menggunakan alert().
+alert("Selamat datang di Website Kedai Kopi PSTI");
 // 2. Tampilkan dialog prompt() untuk meminta nama pengunjung, simpan hasilnya ke variabel "namaPelanggan".
+let Nama_Pelanggan = prompt("Masukan nama anda untuk bisa mengakses web kami: ");
 // 3. Gunakan percabangan "if - else":
 //    - JIKA namaPelanggan ada isinya: tampilkan alert sapaan dan log ke console.
 //    - JIKA namaPelanggan kosong / klik Cancel: beri nilai default "Pelanggan Setia" dan tampilkan alert pemberitahuan.
-
-
+if(Nama_Pelanggan){
+    alert("Halooo " + Nama_Pelanggan + "! Selamat datang dan Terimakasih sudah bergabung di web kami 👋😊" + "\n");
+    alert("Dapatkan dan tukerkan point anda untuk mendapatkan diskon dari kami 🤗")
+    console.log("Halooo " + Nama_Pelanggan + "! Selamat datang dan Terimakasih sudah bergabung di web kami 👋😊" + "\n");
+    console.log("Dapatkan dan tukerkan point anda untuk mendapatkan diskon dari kami 🤗")
+}else{
+    Nama_Pelanggan = "Pelanggan Setia";
+    alert("Kamu belum memasukan nama, kamu di anggap sebagai " + Nama_Pelanggan + " oleh sistem kami. Mohon masukan nama anda agar kami mengetahui identitas anda dan dapatkan dan tukarkan point anda untuk mendapatkan diskon dari kami 🤗" + ":\n");
+    console.log("Kamu belum memasukan nama, kamu di anggap sebagai " + Nama_Pelanggan + " oleh sistem kami. Mohon masukan nama anda agar kami mengetahui identitas anda dan dapatkan dan tukarkan point anda untuk mendapatkan diskon dari kami 🤗" + ":\n");
+}
 
 
 // ============================================================
@@ -70,10 +84,14 @@ console.log("=== SISTEM POIN MEMBER KEDAI KOPI ===");
 // TODO 3:
 // 1. Buat 3 variabel poin transaksi: "poinKopi", "poinMakanan", dan "poinMerchandise"
 //    (isi dengan angka bulat bebas, misal: 45, 35, 20).
+
+let Point_Kopi = 45;
+let Point_Makanan = 35;
+let Point_Merchandise = 20;
 // 2. Buat variabel "totalPoin" yang menjumlahkan ketiga variabel poin di atas.
+let Total_Point = Point_Kopi + Point_Makanan + Point_Merchandise;
 // 3. Cetak rincian perolehan poin dan totalPoin ke Console menggunakan console.log().
-
-
+console.log("Selamat point anda sekarang adalah " + Total_Point + ". Tukarkan point anda untuk mendapatkan diskon!");
 
 
 // ============================================================
